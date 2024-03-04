@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.controller;
+package ua.vholovetskyi.amazonsalesstatistics.security.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import ua.vixdev.gym.security.controller.dto.JwtTokenDto;
-import ua.vixdev.gym.security.controller.dto.LoginUserDto;
-import ua.vixdev.gym.security.controller.dto.RegisterUserDto;
-import ua.vixdev.gym.security.service.AuthenticationService;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.JwtTokenDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.LoginUserDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.RegisterUserDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.service.AuthenticationService;
+
 
 /**
  * @author Volodymyr Holovetskyi

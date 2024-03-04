@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.service;
+package ua.vholovetskyi.amazonsalesstatistics.security.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -10,14 +10,15 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-import ua.vixdev.gym.security.controller.dto.JwtTokenDto;
-import ua.vixdev.gym.security.controller.dto.LoginUserDto;
-import ua.vixdev.gym.security.controller.dto.RegisterUserDto;
-import ua.vixdev.gym.security.model.UserEntityDetails;
-import ua.vixdev.gym.security.model.UserRole;
-import ua.vixdev.gym.user.entity.UserEntity;
-import ua.vixdev.gym.user.exceptions.UserAlreadyExistsException;
-import ua.vixdev.gym.user.repository.UserRepository;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.JwtTokenDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.LoginUserDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.controller.dto.RegisterUserDto;
+import ua.vholovetskyi.amazonsalesstatistics.security.exception.UserAlreadyExistsException;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserEntity;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserEntityDetails;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserRole;
+import ua.vholovetskyi.amazonsalesstatistics.security.repository.UserRepository;
+
 
 import java.util.Date;
 import java.util.Set;
@@ -67,8 +68,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
                 registerUserDto.getLastName(),
                 registerUserDto.getUsername(),
                 passwordEncoder.encode(registerUserDto.getPassword()),
-                registerUserDto.getPhoneNumber(),
-                true,
                 Set.of(UserRole.ROLE_USER)));
         log.info("Registered user with ID: {}", savedUser.getId());
         return new JwtTokenDto(authenticate(registerUserDto.getUsername(), registerUserDto.getPassword()));

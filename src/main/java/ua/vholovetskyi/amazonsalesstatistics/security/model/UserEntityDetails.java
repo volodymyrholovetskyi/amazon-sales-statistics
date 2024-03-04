@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.model;
+package ua.vholovetskyi.amazonsalesstatistics.security.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import java.util.Collection;
 @Setter
 public class UserEntityDetails extends User {
 
-    private Long id;
+    private String id;
     public UserEntityDetails(String username, String password, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
     }

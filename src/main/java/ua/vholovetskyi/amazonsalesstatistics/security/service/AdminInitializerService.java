@@ -1,14 +1,14 @@
-package ua.vixdev.gym.security.service;
+package ua.vholovetskyi.amazonsalesstatistics.security.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ua.vixdev.gym.security.config.AdminConfig;
-import ua.vixdev.gym.security.model.UserRole;
-import ua.vixdev.gym.user.entity.UserEntity;
-import ua.vixdev.gym.user.repository.UserRepository;
+import ua.vholovetskyi.amazonsalesstatistics.security.config.AdminConfig;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserEntity;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserRole;
+import ua.vholovetskyi.amazonsalesstatistics.security.repository.UserRepository;
 
 import java.util.Set;
 /**
@@ -37,10 +37,7 @@ public class AdminInitializerService implements CommandLineRunner {
                     adminConfig.getLastName(),
                     adminConfig.getUsername(),
                     passwordEncoder.encode(adminConfig.getPassword()),
-                    adminConfig.getPhoneNumber(),
-                    true,
-                    Set.of(UserRole.ROLE_ADMIN)
-            );
+                    Set.of(UserRole.ROLE_ADMIN));
             UserEntity savedUser = userRepository.save(userEntity);
             log.info("Add Admin: {} to the DB...", savedUser.getEmail());
         } catch (Exception e) {

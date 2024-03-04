@@ -10,7 +10,6 @@ import ua.vholovetskyi.amazonsalesstatistics.db.SalesReportRepository;
 import ua.vholovetskyi.amazonsalesstatistics.exception.ResourceNotFound;
 import ua.vholovetskyi.amazonsalesstatistics.model.SalesAndTrafficByAsin;
 import ua.vholovetskyi.amazonsalesstatistics.model.SalesAndTrafficByDate;
-import ua.vholovetskyi.amazonsalesstatistics.model.SalesReportRoot;
 
 import java.util.List;
 
@@ -20,24 +19,16 @@ public class SalesStatisticsService {
 
     private final SalesReportRepository repository;
     private final SalesAndTrafficByDateRepository salesAndTrafficByDateRepository;
-
     private final SalesAndTrafficByAsinRepository salesAndTrafficByAsinRepository;
 
-    public List<SalesReportRoot> getSalesReports() {
-        return repository.findAll();
-    }
 
-    public SalesReportRoot getById(String id) {
-        return repository.findBySalesId(id);
-    }
-
-        public SalesAndTrafficByDate getStatisticsForSpecificDate(String date) {
-            return salesAndTrafficByDateRepository.findSalesAndTrafficByDate(date)
-                    .orElseThrow(() -> new ResourceNotFound("DATE", date));
+    public SalesAndTrafficByDate getStatisticsForSpecificDate(String date) {
+        return salesAndTrafficByDateRepository.findSalesAndTrafficByDate(date)
+                .orElseThrow(() -> new ResourceNotFound("DATE", date));
     }
 
     public List<SalesAndTrafficByDate> getStatisticsForPeriodOfDates(String from, String to) {
-        return repository.getObjectByDate(from, to);
+        return salesAndTrafficByDateRepository.findSalesForPeriodOfDates(from, to);
     }
 
     public SalesAndTrafficByAsin getStatisticsForSpecificAsin(String asin) {

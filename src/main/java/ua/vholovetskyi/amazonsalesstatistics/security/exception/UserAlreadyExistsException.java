@@ -1,4 +1,4 @@
-package ua.vixdev.gym.user.exceptions;
+package ua.vholovetskyi.amazonsalesstatistics.security.exception;
 
 /**
  * @author Volodymyr Holovetskyi

@@ -6,6 +6,11 @@
         <heap unit="entries">500</heap>
     </cache-template>
 
-    <cache alias="users" uses-template="default"/>
+    <cache alias="specificDate" uses-template="default"/>
+    <cache alias="periodDates" uses-template="default"/>
+    <cache alias="asin" uses-template="default"/>
+    <cache alias="asins" uses-template="default"/>
+    <cache alias="allPeriod" uses-template="default"/>
+    <cache alias="allAsins" uses-template="default"/>
 
 </config>

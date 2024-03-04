@@ -1,9 +1,9 @@
-package ua.vixdev.gym.security.model;
+package ua.vholovetskyi.amazonsalesstatistics.security.model;
 
 /**
  * @author Volodymyr Holovetskyi
  * @version 1.0
- * @since 2024-02-24
+ * @since 2024-03-04
  */
 public enum UserRole {
 

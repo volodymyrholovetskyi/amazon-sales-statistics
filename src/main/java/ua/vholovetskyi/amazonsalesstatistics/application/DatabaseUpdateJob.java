@@ -6,6 +6,8 @@ import com.cronutils.parser.CronParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Caching;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import ua.vholovetskyi.amazonsalesstatistics.db.ReportSpecificationRepository;
@@ -34,6 +36,13 @@ public class DatabaseUpdateJob {
     private final ObjectMapper jsonMapper;
 
     @Scheduled(cron = "${app.scheduler.config.cron}")
+    @Caching(evict = {
+            @CacheEvict(value = "specificDate", allEntries = true),
+            @CacheEvict(value = "periodDates", allEntries = true),
+            @CacheEvict(value = "asin", allEntries = true),
+            @CacheEvict(value = "asins", allEntries = true),
+            @CacheEvict(value = "allPeriod", allEntries = true),
+            @CacheEvict(value = "allAsins", allEntries = true)})
     void run() {
         log.info("Run Scheduler: {}", LocalDateTime.now());
         try (BufferedReader bufferedReader = Files.newBufferedReader(Paths.get(config.getFileName()))) {

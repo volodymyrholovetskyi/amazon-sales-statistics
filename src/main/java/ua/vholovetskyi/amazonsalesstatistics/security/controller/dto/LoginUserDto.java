@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.controller.dto;
+package ua.vholovetskyi.amazonsalesstatistics.security.controller.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

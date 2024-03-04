@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.config;
+package ua.vholovetskyi.amazonsalesstatistics.security.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -15,8 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import ua.vixdev.gym.security.config.AdminConfig;
-import ua.vixdev.gym.security.filter.JwtAuthorizationFilter;
+import ua.vholovetskyi.amazonsalesstatistics.security.filter.JwtAuthorizationFilter;
 
 /**
  * @author Volodymyr Holovetskyi

@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.filter;
+package ua.vholovetskyi.amazonsalesstatistics.security.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -11,7 +11,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
-import ua.vixdev.gym.security.model.UserEntityDetails;
+import ua.vholovetskyi.amazonsalesstatistics.security.model.UserEntityDetails;
 
 import java.io.IOException;
 

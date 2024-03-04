@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.controller.dto;
+package ua.vholovetskyi.amazonsalesstatistics.security.controller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

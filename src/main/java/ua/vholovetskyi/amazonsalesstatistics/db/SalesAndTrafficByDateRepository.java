@@ -15,7 +15,7 @@ public interface SalesAndTrafficByDateRepository extends MongoRepository<SalesAn
     Optional<SalesAndTrafficByDate> findSalesAndTrafficByDate(String date);
 
     @Query("{'date' : { '$gte': ?0, '$lte': ?1 } }")
-    List<SalesAndTrafficByDate> getObjectByDate(String from, String to);
+    List<SalesAndTrafficByDate> findSalesForPeriodOfDates(String from, String to);
 
     @Aggregation(pipeline = {
             "{$group: {" +

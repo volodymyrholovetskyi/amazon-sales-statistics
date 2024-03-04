@@ -1,4 +1,4 @@
-package ua.vixdev.gym.security.config;
+package ua.vholovetskyi.amazonsalesstatistics.security.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -21,7 +21,6 @@ public class AdminConfig {
     private String lastName;
     private String username;
     private String password;
-    private String phoneNumber;
     private Set<String> roles;
 
     public User adminUser() {
